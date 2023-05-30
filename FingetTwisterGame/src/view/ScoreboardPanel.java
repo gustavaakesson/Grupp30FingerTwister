@@ -47,7 +47,9 @@ public class ScoreboardPanel extends JPanel implements Runnable {
 
 
     public void setTextArea() throws IOException {
-
+        if(scoreboard == null){
+            scoreboard = new Scoreboard();
+        }
         scoreboard = view.getController().getScoreBoard();
         String name;
         String score;
@@ -70,10 +72,8 @@ public class ScoreboardPanel extends JPanel implements Runnable {
         while(true) {
             try {
                 setTextArea();
-                Thread.sleep(100);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (InterruptedException e) {
+                Thread.sleep(200);
+            } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
 

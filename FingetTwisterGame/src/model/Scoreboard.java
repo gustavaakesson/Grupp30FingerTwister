@@ -14,7 +14,7 @@ public class Scoreboard {
         String name;
         int score;
         try {
-            BufferedReader bufferedReader = new BufferedReader((new FileReader("ScoreBoard.txt")));
+            BufferedReader bufferedReader = new BufferedReader((new FileReader("/Users/gustavakesson/Documents/GitHub/Grupp30FingerTwister/FingetTwisterGame/ScoreBoard.txt")));
             for(int i = 0; i < bufferedReader.read(); ++i) {
                 name = bufferedReader.readLine();
                 //  System.out.println("ScoreBoard");
@@ -41,11 +41,11 @@ public class Scoreboard {
         String playerName;
         String playerScore;
 
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("ScoreBoard.txt", false));
-        for(int i=0; i<scoreboard.size(); i++){
-            playerName = scoreboard.get(i).getName();
-            playerScore = String.valueOf(scoreboard.get(i).getScore());
-            bufferedWriter.write(" "+playerName);
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("/Users/gustavakesson/Documents/GitHub/Grupp30FingerTwister/FingetTwisterGame/ScoreBoard.txt", false));
+        for (Score score : scoreboard) {
+            playerName = score.getName();
+            playerScore = String.valueOf(score.getScore());
+            bufferedWriter.write(" " + playerName);
             bufferedWriter.newLine();
             bufferedWriter.write(playerScore);
             bufferedWriter.newLine();

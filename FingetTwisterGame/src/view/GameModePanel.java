@@ -72,6 +72,8 @@ public class GameModePanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == startButton){
+            view.getScoreBoardPanel().setVisible(false);
+            removeScoreboardText();
             if (Objects.equals(startButton.getText(), "STOP")){
                 this.setVisible(false);
                 new StartMenu();
@@ -117,6 +119,13 @@ public class GameModePanel extends JPanel implements ActionListener {
         }
 
  */
+    }
+
+    public void removeScoreboardText(){
+        this.scoreboardText.setText("");
+    }
+    public void restoreScoreboardText(){
+        this.scoreboardText.setText("Scoreboard");
     }
 
     public JComboBox<String> getGameModeChoser() {

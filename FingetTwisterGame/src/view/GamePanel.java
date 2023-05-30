@@ -202,6 +202,7 @@ public class GamePanel extends JPanel implements KeyListener {
                         //view.getScoreBoardPanel().addNewScore(name, view.getController().getKeyCount());
                         try {
                             view.getController().newScore(name, view.getController().getKeyCount());
+                            System.out.println("Score entered");
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }

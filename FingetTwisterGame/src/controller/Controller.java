@@ -102,7 +102,9 @@ public class Controller implements ActionListener, Runnable {
         scoreBoard = new Scoreboard();
     }
     public void newScore(String name, int score) throws IOException {
-
+        if(scoreBoard == null){
+            scoreBoard = new Scoreboard();
+        }
         scoreBoard.setNewScore(name, score);
     }
     public Scoreboard getScoreBoard(){
